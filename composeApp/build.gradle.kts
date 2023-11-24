@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.compose.ExperimentalComposeLibrary
 
 plugins {
@@ -21,8 +20,6 @@ kotlin {
         }
     }
     
-    jvm("desktop")
-    
     listOf(
         iosX64(),
         iosArm64(),
@@ -38,16 +35,14 @@ kotlin {
         val voyagerVersion = "1.0.0-rc10"
         val ktorVersion = "2.3.3"
         val ktorfitVersion = "1.7.0"
-        val desktopMain by getting
+        val dataStoreVersion = "1.1.0-alpha06"
         
         androidMain.dependencies {
             implementation(libs.compose.ui)
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
         }
-        desktopMain.dependencies {
-            implementation(compose.desktop.currentOs)
-        }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -67,11 +62,15 @@ kotlin {
             implementation("cafe.adriel.voyager:voyager-kodein:$voyagerVersion")
             // Kodein
             implementation("org.kodein.di:kodein-di:7.20.2")
+            implementation("org.kodein.di:kodein-di-framework-compose:7.20.2")
             // ktor
             implementation("io.ktor:ktor-client-serialization:$ktorVersion")
             implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
             implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             implementation("de.jensklingenberg.ktorfit:ktorfit-lib:$ktorfitVersion")
+            // datastore
+            implementation("androidx.datastore:datastore-preferences-core:$dataStoreVersion")
+            implementation("androidx.datastore:datastore-core-okio:$dataStoreVersion")
         }
     }
 }
@@ -113,17 +112,5 @@ android {
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
-    }
-}
-
-compose.desktop {
-    application {
-        mainClass = "MainKt"
-
-        nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.avocado.apehub"
-            packageVersion = "1.0.0"
-        }
     }
 }

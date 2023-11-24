@@ -1,4 +1,4 @@
-package com.avocado.apehub.modules.home
+package io.avocado.apehub.app.home
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -21,10 +21,10 @@ import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.CurrentTab
 import cafe.adriel.voyager.navigator.tab.TabNavigator
-import com.avocado.apehub.modules.home.account.AccountTab
-import com.avocado.apehub.modules.home.appraise.AppraiseTab
-import com.avocado.apehub.modules.home.community.CommunityTab
-import com.avocado.apehub.modules.home.opportunity.OpportunityTab
+import io.avocado.apehub.app.home.account.AccountTab
+import io.avocado.apehub.app.home.appraise.AppraiseTab
+import io.avocado.apehub.app.home.community.CommunityTab
+import io.avocado.apehub.app.home.opportunity.OpportunityTab
 
 val LocalGlobalNavigator = compositionLocalOf<Navigator?> { null }
 

@@ -1,4 +1,4 @@
-package com.avocado.apehub.core.ui
+package io.avocado.apehub.core.ui
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloat

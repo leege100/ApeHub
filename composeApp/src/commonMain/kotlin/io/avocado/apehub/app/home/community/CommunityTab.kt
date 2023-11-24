@@ -1,4 +1,4 @@
-package com.avocado.apehub.modules.home.community
+package io.avocado.apehub.app.home.community
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -26,9 +26,9 @@ internal object CommunityTab : Tab {
     override val options: TabOptions
         @Composable
         get() {
-            val title = "My account"
-            val selectedIcon = painterResource("icons/tab_commmunity_selected.png")
-            val unselectedIcon = painterResource("icons/tab_commmunity_normal.png")
+            val title = "Community"
+            val selectedIcon = painterResource("icons/tab_community_selected.png")
+            val unselectedIcon = painterResource("icons/tab_community_normal.png")
             val tabNavigator = LocalTabNavigator.current.current
             return TabOptions(
                 index = 3u,

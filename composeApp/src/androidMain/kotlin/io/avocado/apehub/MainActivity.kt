@@ -1,4 +1,4 @@
-package com.avocado.apehub
+package io.avocado.apehub
 
 import App
 import android.os.Bundle

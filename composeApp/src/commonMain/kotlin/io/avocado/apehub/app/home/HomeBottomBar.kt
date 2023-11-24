@@ -1,4 +1,4 @@
-package com.avocado.apehub.modules.home
+package io.avocado.apehub.app.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

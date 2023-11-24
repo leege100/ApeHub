@@ -1,4 +1,4 @@
-package com.avocado.apehub.core.ui
+package io.avocado.apehub.core.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,7 +34,7 @@ fun <T> LoadableState<T>.loadedSuccess(): LoadableState<T> {
     return this.copy(loadState = LoadStateEnum.LoadedSuccess)
 }
 
-fun <T>LoadableState<T>.loadedError(): LoadableState<T> {
+fun <T> LoadableState<T>.loadedError(): LoadableState<T> {
     return this.copy(loadState = LoadStateEnum.LoadedError)
 }
 

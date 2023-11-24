@@ -1,2 +1,2 @@
-package com.avocado.apehub.common.entity
+package io.avocado.apehub.common.entity
 
