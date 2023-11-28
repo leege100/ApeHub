@@ -22,9 +22,10 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.CurrentTab
 import cafe.adriel.voyager.navigator.tab.TabNavigator
 import io.avocado.apehub.app.home.account.AccountTab
-import io.avocado.apehub.app.home.appraise.AppraiseTab
-import io.avocado.apehub.app.home.community.CommunityTab
-import io.avocado.apehub.app.home.opportunity.OpportunityTab
+import io.avocado.apehub.app.home.following.FollowingTab
+import io.avocado.apehub.app.home.search.SearchTab
+import io.avocado.apehub.app.home.trending.TrendingTab
+import io.avocado.apehub.app.home.stars.StarsTab
 
 val LocalGlobalNavigator = compositionLocalOf<Navigator?> { null }
 
@@ -37,11 +38,11 @@ fun HomePage() {
     val focusManager = LocalFocusManager.current
     val keyboardManager = LocalSoftwareKeyboardController.current
     CompositionLocalProvider(LocalGlobalNavigator provides navigator) {
-        TabNavigator(CommunityTab) {
+        TabNavigator(TrendingTab) {
             Scaffold(
                 contentWindowInsets = WindowInsets.systemBars,
                 bottomBar = {
-                    HomeBottomBar(listOf(CommunityTab, AppraiseTab, OpportunityTab, AccountTab))
+                    HomeBottomBar(listOf(TrendingTab, FollowingTab, StarsTab, SearchTab, AccountTab))
                 },
             ) {
                 Box(
